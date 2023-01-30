@@ -1,0 +1,31 @@
+{
+  "name": "muse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server/index.ts",
+    "client": "cd client && npm run start",
+    "build:client": "cd client && npm run build",
+    "iall": "npm i && cd client && npm i",
+    "startboth": "npm run server & npm run client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenxha/muse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zenxha/muse/issues"
+  },
+  "homepage": "https://github.com/zenxha/muse#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
+}
