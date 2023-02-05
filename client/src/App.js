@@ -4,7 +4,6 @@ import axios from 'axios';
 
 
 import Button from './components/Button';
-import SignInForm from './components/SignInForm';
 import Nav from './components/Nav';
 
 import { useState } from 'react';
@@ -30,7 +29,6 @@ function App() {
         <p>
           Hello there
         </p>
-        <SignInForm />
         <a
           className="App-link"
           href="https://github.com/zenxha/muse"
