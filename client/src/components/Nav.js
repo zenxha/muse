@@ -15,8 +15,16 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 import './Nav.css';
 import SignInForm from './SignInForm';
+import { Link } from 'react-router-dom';
 
 const pages = ['Products', 'Pricing', 'Blog'];
+
+const pg = {
+  'Products' : 'https://naver.com',
+  'Pricing' : '/',
+  'Blog' : '/',
+};
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -35,9 +43,8 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = (props) => {
+  const handleCloseUserMenu = () => {
     setAnchorElUser(null);
-    console.log(props.target.id);
   };
 
   return (
@@ -60,7 +67,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            MUSE
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -92,9 +99,11 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page,index) => (
+                <MenuItem key={index} onClick={handleCloseNavMenu} >
+                  
+                    <Typography textAlign="center">{page}</Typography>
+                  
                 </MenuItem>
               ))}
             </Menu>
