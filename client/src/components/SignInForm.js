@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 
 function SignInForm() {
   const [username, setUsername] = useState('');
@@ -29,7 +30,7 @@ function SignInForm() {
         <input type="password" value={password} onChange={handlePasswordChange} />
       </label>
       <br />
-      <button type="submit">Sign In</button>
+      <Button type="submit" text = "Sign In" />
     </form>
   );
 }
