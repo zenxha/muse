@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 
 
-import Button from './components/Button'
+import Button from './components/Button';
 import SignInForm from './components/SignInForm';
 import Nav from './components/Nav'
 
