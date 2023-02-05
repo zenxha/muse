@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import SignInForm from './fanArtists';
+import SignInForm from './SignInForm';
 
 
 const hitBackend = () => {
@@ -19,6 +19,7 @@ function App() {
         <p>
           Hello there
         </p>
+        <SignInForm />
         <a
           className="App-link"
           href="https://github.com/zenxha/muse"
