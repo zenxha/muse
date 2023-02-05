@@ -15,6 +15,11 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['About', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pg = {
+  'Products' : 'https://naver.com',
+  'Pricing' : '/',
+  'Blog' : '/',
+};
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
