@@ -5,11 +5,10 @@ import axios from 'axios';
 
 import Button from './components/Button'
 import SignInForm from './components/SignInForm';
-
-import NavClass from './components/NavWClass';
+import Nav from './components/Nav'
 
 import { useState } from 'react';
-import NavWClass from './components/NavWClass';
+
 
 
 
@@ -25,9 +24,8 @@ function App() {
     })
     }
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavWClass />
+    <div className="App App-header">
+        <Nav />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hello there
@@ -44,7 +42,7 @@ function App() {
         
         <Button text="Cat Fact" onClick={hitBackend}/>
         {text}
-      </header>
+      
       
     </div>
   );
