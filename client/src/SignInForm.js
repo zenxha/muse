@@ -20,12 +20,12 @@ function SignInForm() {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Username:
+        {"Username: "}
         <input type="text" value={username} onChange={handleUsernameChange} />
       </label>
       <br />
       <label>
-        Password:
+        {"Password: "}
         <input type="password" value={password} onChange={handlePasswordChange} />
       </label>
       <br />
