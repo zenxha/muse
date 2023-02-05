@@ -3,6 +3,7 @@ const app = express();
 
 app.get('/test', (req, res) => {
   res.send({ message: 'Hello from the backend!' });
+  console.log("recieved request");
 });
 
 const port = process.env.PORT || 5000;

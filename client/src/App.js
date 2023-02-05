@@ -1,17 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+
 import SignInForm from './SignInForm';
 
+import { useState } from 'react';
 
-const hitBackend = () => {
-  axios.get('https://catfact.ninja/fact')
-  .then((response) => {
-  console.log(response.data)
-  })
-  }
+
 
 function App() {
+
+  const [text, setText] = useState([""])
+
+  const hitBackend = () => {
+    axios.get('https://catfact.ninja/fact')
+    .then((response) => {
+    console.log(response.data)
+    setText(response.data.fact);
+    })
+    }
   return (
     <div className="App">
       <header className="App-header">
@@ -29,6 +36,7 @@ function App() {
           Github Repository
         </a>
         <button className="btn" onClick={hitBackend}>Send request</button>
+        {text}
       </header>
       
     </div>
