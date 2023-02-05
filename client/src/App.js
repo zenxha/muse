@@ -3,13 +3,11 @@ import './App.css';
 import axios from 'axios';
 
 
-import Button from './components/Button'
+import Button from './components/Button';
 import SignInForm from './components/SignInForm';
 
-import NavClass from './components/NavWClass';
-
 import { useState } from 'react';
-import NavWClass from './components/NavWClass';
+
 
 
 
