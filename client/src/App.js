@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
+
+import Button from './components/Button'
 import SignInForm from './components/SignInForm';
 
 import { useState } from 'react';
@@ -35,7 +37,8 @@ function App() {
         >
           Github Repository
         </a>
-        <button className="btn" onClick={hitBackend}>Send request</button>
+        
+        <Button text="Cat Fact" onClick={hitBackend}/>
         {text}
       </header>
       
