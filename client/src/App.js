@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import SignInForm from './fanArtists';
 import { useState } from 'react';
 
 
@@ -21,7 +22,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hi there
+          Hello there
         </p>
         <a
           className="App-link"
