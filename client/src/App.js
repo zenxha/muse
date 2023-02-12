@@ -1,5 +1,4 @@
 import Home from './routes/Home'
-
 import { useState } from 'react';
 import {
   BrowserRouter as Router, /* You can also use HashRouter with '#/' */
@@ -10,17 +9,14 @@ import {
 
 
 function App() {
-
-  const [text, setText] = useState([""])
-
+  //const [text, setText] = useState([""])
   return (
     <Router>
-    <Routes>
-      <Route path={`/detail`} element={<Home/>} /> 
-      {/* :id is a dynamic router */}
-      <Route path={`/`} element={<Home />} />
-    </Routes>
-  </Router>
+      <Routes>
+        <Route path={`/detail`} element={<Home/>} /> 
+        <Route path={`/`} element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
