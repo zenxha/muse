@@ -13,20 +13,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-import './Nav.css';
-import SignInForm from './SignInForm';
-import { Link } from 'react-router-dom';
-
-const pages = ['Products', 'Pricing', 'Blog'];
-
+const pages = ['About', 'Pricing', 'Blog'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const pg = {
   'Products' : 'https://naver.com',
   'Pricing' : '/',
   'Blog' : '/',
 };
-
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -48,7 +41,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static sticky-top">
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -67,7 +60,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            MUSE
+            LOGO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -99,11 +92,9 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page,index) => (
-                <MenuItem key={index} onClick={handleCloseNavMenu} >
-                  
-                    <Typography textAlign="center">{page}</Typography>
-                  
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -160,9 +151,9 @@ const ResponsiveAppBar = () => {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
-            > 
+            >
               {settings.map((setting) => (
-                <MenuItem id={setting} key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center"><Link to ={"https://naver.com"}>{setting}</Link></Typography>
                 </MenuItem>
               ))}
