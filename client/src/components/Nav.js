@@ -163,7 +163,7 @@ const ResponsiveAppBar = () => {
             > 
               {settings.map((setting) => (
                 <MenuItem id={setting} key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center"><Link to ={"https://naver.com"}>{setting}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
