@@ -22,11 +22,13 @@ const About = () => {
           Github Repository
         </a>
       </Grid>
-      {creatorData.data.map(person => {
-        return <Grid key={person.id} item xs={4} >
-          <OutlinedCard person={person}/>
-          </Grid>
-      })}
+        <Grid item xs={3} />
+        {creatorData.data.map(person => {
+          return <Grid key={person.id} item xs={3} >
+            <OutlinedCard person={person}/>
+            </Grid>
+        })}
+        <Grid item xs={3} />
     </Grid>
   );
 }
