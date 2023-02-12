@@ -1,4 +1,5 @@
 import Home from './routes/Home';
+import About from './routes/About';
 import Nav from './components/Nav'
 import SignIn from './routes/SignIn';
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign_in" element={<SignIn />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     
     </>
