@@ -1,4 +1,5 @@
 import Home from './routes/Home';
+import Nav from './components/Nav'
 
 
 import { useState } from 'react';
@@ -13,9 +14,15 @@ import {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <>
+    <Nav />
+    
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    
+    </>
+
   );
 }
 

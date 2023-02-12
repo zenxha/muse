@@ -1,7 +1,7 @@
 import Button from '../components/Button';
 import {useState} from 'react';
 import axios from 'axios';
-import Nav from '../components/Nav';
+
 import '../App.css';
 
 const Home = () => {
@@ -17,7 +17,6 @@ const Home = () => {
 
   return (
     <div className="App App-header">
-      <Nav />
 
       <p>
         Hello there
