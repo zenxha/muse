@@ -1,0 +1,37 @@
+.sticky-top {
+    position: -webkit-sticky;
+    position: fixed;
+    top: 0;
+    z-index: 1020;
+}
+
+.setting__text {
+    color: white;
+}
+
+.setting__text:link {
+    color : white;
+    text-decoration: none;
+}
+
+.setting__text:visited {
+    color: rgb(209, 209, 209);
+}
+
+.setting__text:hover {
+    color: rgb(27, 117, 220);
+    text-decoration: underline;
+}
+
+.setting__text:active {
+    color : green;
+    text-decoration: none;
+}
+
+.Nav__btn_ {
+    background-color: black;
+}
+
+.Nav__btn_clicked {
+    border: 2px solid white;
+}

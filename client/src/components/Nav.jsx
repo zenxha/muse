@@ -13,7 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Link} from 'react-router-dom';
-import { paginationItemClasses } from '@mui/material';
+// import { paginationItemClasses } from '@mui/material';
+import './Nav.module.css';
 
 const pages = {
   "About": "about",
@@ -21,13 +22,6 @@ const pages = {
   "Blog": "/",
 }
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-const pg = {
-  'Products' : 'https://naver.com',
-  'Pricing' : '/',
-  'Blog' : '/',
-};
-
-
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -39,7 +33,7 @@ const ResponsiveAppBar = () => {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -101,10 +95,7 @@ const ResponsiveAppBar = () => {
               }}
             >
               {Object.entries(pages).map(([page, route]) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  {/* {console.log("route", route)}
-                  {console.log("page", page)} */}
-                  
+                <MenuItem key={page} onClick={handleCloseNavMenu}>         
                   <Typography textAlign="center"> {page}</Typography>
                 </MenuItem>
               ))}
@@ -136,7 +127,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link to={route} style={{ textDecoration: "none" }}>{page}</Link>
+                <Link to={route} style={{ textDecoration: "none", color: 'white', }}>{page}</Link>
               </Button>
             ))}
           </Box>
@@ -166,7 +157,7 @@ const ResponsiveAppBar = () => {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   {setting === "Logout" ? 
-                    <Typography textAlign="center"><Link to="/login" style={{ textDecoration: "none" }}> {setting} </Link> </Typography> :
+                    <Typography textAlign="center" className={"setting__text"}><Link to="/login"  style={{ textDecoration: "none", color: 'black', }}> {setting} </Link> </Typography> :
                     <Typography textAlign="center"> {setting} </ Typography>
                   }
                 </MenuItem>
