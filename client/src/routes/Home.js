@@ -1,5 +1,9 @@
 import Button from '../components/Button';
 import {useState} from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Unstable_Grid2';
 import axios from 'axios';
 
 import '../App.css';
@@ -16,7 +20,7 @@ const Home = () => {
   }
 
   return (
-    <div className="App App-header">
+    <>
 
       <p>
         Hello there
@@ -33,7 +37,7 @@ const Home = () => {
       
       <Button text="Cat Fact" onClick={hitBackend}/>
       <p>{text}</p>
-    </div>
+    </>
   );
 }
 
