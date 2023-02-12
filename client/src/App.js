@@ -13,8 +13,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path={`/detail`} element={<Home/>} /> 
-        <Route path={`/`} element={<Home />} />
+        <Route path={`/detail`} element={<h2>Hi</h2> } /> 
+        <Route path={`/`} element={<h2>Hello</h2>} />
       </Routes>
     </Router>
   );

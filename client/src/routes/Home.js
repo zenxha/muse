@@ -9,16 +9,18 @@ const Home = ({onClick, text}) => {
         <p>
           Hello there
         </p>
-        {/* <a
+        <a
           className="App-link"
           href="https://github.com/zenxha/muse"
           target="_blank"
           rel="noopener noreferrer"
         >
           Github Repository
-        </a> */}
-        <Button text="Cat Fact" onClick={onClick}/>
-        {text}
+        </a>
+        <div>
+            <Button text="Cat Fact" onClick={onClick}/>
+            {text}
+        </div>
     </div>
   );
 }
