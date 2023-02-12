@@ -13,8 +13,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Link} from 'react-router-dom';
+import { paginationItemClasses } from '@mui/material';
 
-const pages = ['About', 'Pricing', 'Blog'];
+const pages = {
+  "About": "about",
+  "Pricing": "/",
+  "Blog": "/",
+}
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const pg = {
   'Products' : 'https://naver.com',
@@ -95,9 +100,12 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {Object.entries(pages).map(([page, route]) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  {console.log("route", route)}
+                  {console.log("page", page)}
+                  
+                  <Typography textAlign="center"> {page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -122,13 +130,13 @@ const ResponsiveAppBar = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {Object.entries(pages).map(([page, route]) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link to={route} style={{ textDecoration: "none" }}>{page}</Link>
               </Button>
             ))}
           </Box>
