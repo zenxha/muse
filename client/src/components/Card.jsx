@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import styles from './Card.module.css';
-import { minHeight } from '@mui/system';
 
 const bull = (
   <Box
