@@ -1,7 +1,7 @@
 import SignInForm from "../components/SignInForm";
 import styles from "./SignIn.module.css"
 
-const SignIn = () => {
+const Login = () => {
     return (
         <div className={styles.container}>
             <SignInForm />
@@ -9,4 +9,4 @@ const SignIn = () => {
     );
 }
 
-export default SignIn;
+export default Login;

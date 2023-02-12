@@ -102,8 +102,8 @@ const ResponsiveAppBar = () => {
             >
               {Object.entries(pages).map(([page, route]) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  {console.log("route", route)}
-                  {console.log("page", page)}
+                  {/* {console.log("route", route)}
+                  {console.log("page", page)} */}
                   
                   <Typography textAlign="center"> {page}</Typography>
                 </MenuItem>
@@ -166,7 +166,7 @@ const ResponsiveAppBar = () => {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   {setting === "Logout" ? 
-                    <Typography textAlign="center"><Link to="/sign_in" style={{ textDecoration: "none" }}> {setting} </Link> </Typography> :
+                    <Typography textAlign="center"><Link to="/login" style={{ textDecoration: "none" }}> {setting} </Link> </Typography> :
                     <Typography textAlign="center"> {setting} </ Typography>
                   }
                 </MenuItem>
