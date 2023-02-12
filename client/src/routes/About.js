@@ -1,14 +1,21 @@
 import Button from '../components/Button';
-import Card from '../components/Card';
+import OutlinedCard from '../components/Card';
 import creatorData from '../data/data.json';
 import {useState} from 'react';
 import axios from 'axios';
+
 
 import '../App.css';
 
 const About = () => {
 
+
+  function doThis(x)  {
+     return <OutlinedCard key={x.id} />
+  }
+
   console.log(creatorData.data);
+  
   return (
     <div className="App App-header">
       <a
@@ -20,13 +27,19 @@ const About = () => {
         Github Repository
 
       </a>
-      <div>
-        {creatorData.data.map((x) => {
-          <Card key={x.id} person={x} />
+      
+        {creatorData.data.map(x => {
+          return <OutlinedCard key={x.id} person={x}/>
         })}
-      </div>
+       
+        
+
+        
+      
+      
     </div>
   );
 }
+
 
 export default About;
