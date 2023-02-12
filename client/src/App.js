@@ -1,4 +1,5 @@
 import Home from './routes/Home';
+import About from './routes/About';
 import Nav from './components/Nav'
 
 
@@ -19,6 +20,7 @@ function App() {
     
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     
     </>
