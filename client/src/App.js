@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
@@ -24,9 +23,9 @@ function App() {
     }
 
   return (
-    <div className="App App-header">
+    <div className="App">
         <Nav />
-        <img src={logo} className="App-logo" alt="logo" />
+        
         <p>
           Hello there
         </p>
