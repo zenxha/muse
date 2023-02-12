@@ -2,7 +2,7 @@ import Button from '../components/Button';
 import OutlinedCard from '../components/Card';
 import creatorData from '../data/data.json';
 import {useState} from 'react';
-import axios from 'axios';
+import styles from './About.module.css'
 
 
 import '../App.css';
@@ -27,16 +27,12 @@ const About = () => {
         Github Repository
 
       </a>
-      
+      <div className={styles.wrapper}>
         {creatorData.data.map(x => {
           return <OutlinedCard key={x.id} person={x}/>
         })}
-       
-        
-
-        
-      
-      
+      </div>
+  
     </div>
   );
 }

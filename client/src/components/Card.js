@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import styles from './Card.module.css';
-import { style } from '@mui/system';
 
 const bull = (
   <Box
@@ -21,19 +20,19 @@ const card = ({person}) => {
     
     return <React.Fragment>
     <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom className={styles.card__content}>
         Developer
       </Typography>
-      <Typography variant="h5" component="div">
+      <Typography variant="h5" component="div" gutterBottom className={styles.card__title}>
         {person.name}
       </Typography>
       <Typography sx={{ mb: 1.5 }} color="text.secondary">
         {person.age}
       </Typography>
-      <Typography variant="body2">
+      <Typography variant="body2" className={styles.card__content}>
         {person.description}
        </Typography>
-       <Typography variant="body2" style={{color: 'blue'}}>
+       <Typography variant="body2" style={{color: 'blue'}} className={styles.card__content}>
         {person.quote}
       </Typography>
     </CardContent>
@@ -46,8 +45,8 @@ const card = ({person}) => {
 
 export default function OutlinedCard(person) {
   return (
-    <Box sx={{ minWidth: 275 }} className={style.wrapper}>
-      <Card variant="outlined">{card(person)}</Card>
+    <Box sx={{ minWidth: 275 }} >
+      <Card variant="outlined" className={styles.card}>{card(person)}</Card>
     </Box>
   );
 }
