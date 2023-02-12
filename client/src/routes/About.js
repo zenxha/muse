@@ -1,3 +1,7 @@
+import Grid from '@mui/material/Unstable_Grid2';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+
 import Button from '../components/Button';
 import OutlinedCard from '../components/Card';
 import creatorData from '../data/data.json';
@@ -6,6 +10,7 @@ import styles from './About.module.css'
 
 
 import '../App.css';
+import { TableRow } from '@mui/material';
 
 const About = () => {
 
@@ -17,8 +22,9 @@ const About = () => {
   console.log(creatorData.data);
   
   return (
-  <>
-      <a
+  <Grid container spacing={3}   alignItems="center" justify="center" >
+    <Grid item xs={12}>
+    <a
         className="App-link"
         href="https://github.com/zenxha/muse"
         target="_blank"
@@ -27,12 +33,17 @@ const About = () => {
         Github Repository
 
       </a>
-      <div className={styles.wrapper}>
-        {creatorData.data.map(x => {
-          return <OutlinedCard key={x.id} person={x}/>
-        })}
-      </div>
-</>
+    </Grid>
+    
+    {creatorData.data.map(x => {
+      return <Grid item xs={3} >
+        <OutlinedCard key={x.id} person={x}/>
+         </Grid>
+    })}
+      
+    
+
+</Grid>
   );
 }
 

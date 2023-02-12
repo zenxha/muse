@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import styles from './Card.module.css';
+import { minHeight } from '@mui/system';
 
 const bull = (
   <Box
@@ -46,7 +47,7 @@ const card = ({person}) => {
 export default function OutlinedCard(person) {
   return (
     <Box sx={{ minWidth: 275 }} >
-      <Card variant="outlined" className={styles.card}>{card(person)}</Card>
+      <Card variant="outlined" className={styles.card} style={{backgroundColor: '#ffabed'}}>{card(person)}</Card>
     </Box>
   );
 }
