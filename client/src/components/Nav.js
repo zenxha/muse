@@ -63,7 +63,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            MUSE
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -158,7 +158,7 @@ const ResponsiveAppBar = () => {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   {setting === "Logout" ? 
-                    <Typography textAlign="center"><Link to="/sign_in"> {setting} </Link> </Typography> :
+                    <Typography textAlign="center"><Link to="/sign_in" style={{ textDecoration: "none" }}> {setting} </Link> </Typography> :
                     <Typography textAlign="center"> {setting} </ Typography>
                   }
                 </MenuItem>

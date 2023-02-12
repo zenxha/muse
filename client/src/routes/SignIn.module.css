@@ -1,7 +1,6 @@
-.container {
-    min-height: 100 vh;
-    min-width: 100 ch;
 
+.container {
+    min-height: 100vh;
     text-align: center;
     background-color: #282c34;
     justify-content: center;
