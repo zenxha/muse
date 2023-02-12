@@ -47,7 +47,7 @@ const card = ({person}) => {
 export default function OutlinedCard(person) {
   return (
     <Box sx={{ minWidth: 275 }} >
-      <Card variant="outlined" className={styles.card} style={{backgroundColor: '#ffabed'}}>{card(person)}</Card>
+      <Card variant="outlined" style={{backgroundColor: '#ffabed'}}>{card(person)}</Card>
     </Box>
   );
 }
