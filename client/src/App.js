@@ -1,3 +1,5 @@
+
+
 import Home from './routes/Home';
 import About from './routes/About';
 import Nav from './components/Nav'
@@ -20,12 +22,15 @@ function App() {
     <>
     <Nav />
     <div className="App App-header">
-    <Routes>
+     
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+     
+
     </div>
 
     
