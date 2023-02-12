@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import styles from './Card.module.css';
-import { minHeight } from '@mui/system';
 
 const bull = (
   <Box
@@ -33,7 +32,7 @@ const card = ({person}) => {
       <Typography variant="body2" className={styles.card__content}>
         {person.description}
        </Typography>
-       <Typography variant="body2" style={{color: 'blue'}} className={styles.card__content}>
+       <Typography variant="body2" style={{color: 'blue'}} className={styles.card__description}>
         {person.quote}
       </Typography>
     </CardContent>
