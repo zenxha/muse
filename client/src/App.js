@@ -1,13 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
-
-
-import Button from './components/Button';
-import Nav from './components/Nav';
+import Home from './routes/Home'
 
 import { useState } from 'react';
-
+import {
+  BrowserRouter as Router, /* You can also use HashRouter with '#/' */
+  Route,
+  Routes,
+} from 'react-router-dom';
 
 
 
@@ -15,34 +13,14 @@ function App() {
 
   const [text, setText] = useState([""])
 
-  const hitBackend = () => {
-    axios.get('https://catfact.ninja/fact')
-    .then((response) => {
-    console.log(response.data)
-    setText(response.data.fact);
-    })
-    }
   return (
-    <div className="App App-header">
-        <Nav />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello there
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/zenxha/muse"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Github Repository
-        </a>
-        
-        <Button text="Cat Fact" onClick={hitBackend}/>
-        {text}
-      
-      
-    </div>
+    <Router>
+    <Routes>
+      <Route path={`/detail`} element={<Home/>} /> 
+      {/* :id is a dynamic router */}
+      <Route path={`/`} element={<Home />} />
+    </Routes>
+  </Router>
   );
 }
 

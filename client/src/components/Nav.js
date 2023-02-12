@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import {Link} from 'react-router-dom';
 
 const pages = ['About', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -20,6 +21,8 @@ const pg = {
   'Pricing' : '/',
   'Blog' : '/',
 };
+
+
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -154,7 +157,10 @@ const ResponsiveAppBar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center"><Link to ={"https://naver.com"}>{setting}</Link></Typography>
+                  <Typography textAlign="center">{setting}</Typography>
+                  <h1>
+                    <Link to={"/"}>hello</Link>
+                  </h1>
                 </MenuItem>
               ))}
             </Menu>
