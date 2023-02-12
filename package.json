@@ -24,7 +24,7 @@
   "homepage": "https://github.com/zenxha/muse#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "react-router-dom": "^6.8.0"
+    "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
     "eslint": "^8.33.0"
