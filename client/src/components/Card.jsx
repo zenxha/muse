@@ -32,7 +32,7 @@ const card = ({person}) => {
       <Typography variant="body2" className={styles.card__content}>
         {person.description}
        </Typography>
-       <Typography variant="body2" style={{color: 'blue'}} className={styles.card__content}>
+       <Typography variant="body2" style={{color: 'blue'}} className={styles.card__description}>
         {person.quote}
       </Typography>
     </CardContent>
