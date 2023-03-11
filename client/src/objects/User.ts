@@ -1,6 +1,8 @@
+import Post from './Post'
+
 enum Language {English, Korean, Japanese}
 
-class User {
+export class User {
   private _userID: string;
   private _userName: string;
   private _posts: [Post];
@@ -29,7 +31,7 @@ class User {
   }
 
   public set userID(id: string) { this._userID = id; }
-  public set userName(name: string) { this._userID = name; }
+  public set userName(name: string) { this._userName = name; }
   //public set posts(posts: [Post]) { this._posts = posts; }
   public set dateCreated(date: Date) { this._dateCreated = date; }
   public set profileURL(url: string) { this._profileURL = url; }
@@ -44,7 +46,7 @@ class User {
   public set password(pwd: string) { this._password = pwd; }
 }
 
-class UserData extends User {
+export class UserData extends User {
     constructor(
       userID: string, 
       userName: string, 
@@ -70,3 +72,4 @@ class UserData extends User {
       this.password = password;
     }
 }
+
