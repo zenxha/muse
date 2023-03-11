@@ -69,7 +69,7 @@ function SignUpForm() {
             style={{
                 background:"#89a5de", 
                 height: "420px",
-                width: "600px",
+                width: "1200px",
                 borderRadius: "20px",
                 position: "relative",
                 boxShadow: "0 0 30px rgba(173, 185, 236,.9)",
