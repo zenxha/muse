@@ -7,6 +7,7 @@ const cors = require('cors')
 const mongoose = require('mongoose');
 const User = require('./mongoose/models/user');
 const Post = require('./mongoose/models/post')
+const usersRouter = require('./routes/userAPI')
 
 mongoose.connect('mongodb://localhost/muse');
 
@@ -18,6 +19,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+app.use("/api/users", usersRouter);
 
 app.get('/test', (req, res) => {
   res.send({ message: 'Hello from the backend!' });
