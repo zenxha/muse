@@ -1,13 +1,9 @@
-
-
 import Home from './routes/Home';
 import About from './routes/About';
 import Nav from './components/Nav'
 import Login from './routes/Login';
 import Profile from './routes/Profile'
-
-
-import { useState } from 'react';
+import CreateAccount from './routes/CreateAccount';
 
 import {
   Route,
@@ -28,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/create_account" element={<CreateAccount />} />
       </Routes>
      
 
