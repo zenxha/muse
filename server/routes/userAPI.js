@@ -12,7 +12,7 @@ router.get("/:id", async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
         if (!user) {
-          return res.status(404).json({ error: 'User not found' });
+          return res.status(404).json({ error: 'Post not found' });
         }
         res.json(user);
       } catch (err) {
@@ -20,3 +20,19 @@ router.get("/:id", async (req, res) => {
         res.status(500).json({ error: 'Server error' });
       }
 });
+
+router.post("/create", async (req, res) => {
+    const {name, email, password, age} = req.body;
+    console.log("Creating user");
+    const user = new User({name, email, password, age});
+    console.log(req.body)
+    res.send(req.body);
+    try {
+        await user.save();
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
+
+module.exports = router;

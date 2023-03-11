@@ -72,32 +72,5 @@ app.get('/getPost/:id', async (req, res) => {
     }
 });
 
-
-app.post('/createUser', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  const user = new User({ username, password });
-  user.save((err) => {
-  if (err) {
-  // Handle error
-  }
-  res.send(user);
-  });
-  });
-  
-app.post('/createPost', (req, res) => {
-  const title = req.body.title;
-  const userId = req.body.userId;
-  const content = req.body.content;
-  const post = new Post({ userId, content });
-  console.log(req.body)
-  // post.save((err) => {
-  //   if (err) {
-  //   // Handle error
-  //   }
-  //   res.send(post);
-  // });
-  
-});
 const port = 3001 || 5000; // process.env.PORT
 app.listen(port, () => console.log(`Server running on port ${port}`));
