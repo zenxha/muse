@@ -4,16 +4,12 @@ const cors = require('cors')
 
 
 const mongoose = require('mongoose');
-const User = mongoose.model('User', {
-username: String,
-password: String
-// Other fields here
-});
-const Post = mongoose.model('Post', {
-userId: String,
-content: String
-// Other fields here
-});
+const User = require('./mongoose/models/user');
+const Post = require('./mongoose/models/post')
+
+mongoose.connect('mongodb://localhost/muse');
+
+// const postsCollection = mongoose.db().createCollection('posts');
 
 app.use(cors({
 
@@ -37,11 +33,11 @@ app.post('/login', (req, res) => {
   
   // Check the password
   if (user.password === password) {
-  // Set up the session
-  req.session.user = user;
-  return res.json({ message: 'Login successful' });
+    // Set up the session
+    req.session.user = user;
+    return res.json({ message: 'Login successful' });
   } else {
-  return res.status(401).json({ error: 'Incorrect password' });
+    return res.status(401).json({ error: 'Incorrect password' });
   }
   });
   });
@@ -79,6 +75,7 @@ app.post('/createPost', (req, res) => {
     }
     res.send(post);
   });
+  
 });
 const port = 3001 || 5000; // process.env.PORT
 app.listen(port, () => console.log(`Server running on port ${port}`));
