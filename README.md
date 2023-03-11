@@ -1,2 +1,3 @@
 # muse
 
+muse, muse? amuse!
