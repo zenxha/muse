@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types'
+import './SignUpForm.module.css'
 const Button = ({color, text, onClick}) => {
   return (
     
        <button 
          onClick={onClick} 
          style={{ backgroundColor: color }} 
-         className='btn'>
+         className={"btn"}>
             {text}
       </button>
     

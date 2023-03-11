@@ -21,6 +21,7 @@ export class User {
   constructor(userID: string) {
     this._userID = userID;
     //query the userData
+    this._userName = ""
   }
   
   
