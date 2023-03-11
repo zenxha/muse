@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session')
 const app = express();
 const cors = require('cors')
 
@@ -11,9 +12,12 @@ mongoose.connect('mongodb://localhost/muse');
 
 // const postsCollection = mongoose.db().createCollection('posts');
 
-app.use(cors({
-
-  }));
+app.use(cors({}));
+app.use(session({
+  secret: 'jiwon',
+  resave: false,
+  saveUninitialized: true
+}));
 
 app.get('/test', (req, res) => {
   res.send({ message: 'Hello from the backend!' });
@@ -42,15 +46,21 @@ app.post('/login', (req, res) => {
   });
   });
 
-app.get('/getUser/:id', (req, res) => {
-  const id = req.params.id;
-    db.findById(id, (err, doc) => {
-    if (err) {
-    // Handle error
+
+
+app.get('/getPost/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+      const post = await Post.findById(req.params.id).populate('author');
+      if (!post) {
+        return res.status(404).json({ error: 'Post not found' });
+      }
+      res.json(post);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Server error' });
     }
-    res.send(doc);
-   });
-  });
+});
 
 
 app.post('/createUser', (req, res) => {
@@ -66,15 +76,17 @@ app.post('/createUser', (req, res) => {
   });
   
 app.post('/createPost', (req, res) => {
+  const title = req.body.title;
   const userId = req.body.userId;
   const content = req.body.content;
   const post = new Post({ userId, content });
-  post.save((err) => {
-    if (err) {
-    // Handle error
-    }
-    res.send(post);
-  });
+  console.log(req.body)
+  // post.save((err) => {
+  //   if (err) {
+  //   // Handle error
+  //   }
+  //   res.send(post);
+  // });
   
 });
 const port = 3001 || 5000; // process.env.PORT
