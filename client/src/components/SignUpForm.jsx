@@ -98,8 +98,17 @@ function SignUpForm() {
                     > Before </button>
                     <form onSubmit={handleSubmit}>
                         <label>
-                        {next + " :  "}
-                        <input type={type} placeholder={next} value={input} onChange={handleInput} />
+                            {next + " :  "}
+                            <input type={type} 
+                                placeholder={" " + next} 
+                                value={input} 
+                                onChange={handleInput} 
+                                style={{
+                                    borderRadius: "5px",
+                                    display: "inline-block", 
+                                    verticalAlign: "middle"
+                                }}
+                            />
                         </label>
                         <br />
                         <Button text={"Next"} />
