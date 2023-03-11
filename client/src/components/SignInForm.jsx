@@ -63,12 +63,34 @@ function SignInForm() {
       <div>
         <label>
           {"Username: "}
-          <input type="text" placeholder="id" value={username} onChange={handleUsernameChange} />
+          <input 
+            type="text" 
+            placeholder=" id" 
+            value={username} 
+            onChange={handleUsernameChange} 
+            style={{
+              borderRadius: "5px",
+              display: "inline-block", 
+              verticalAlign: "middle",
+              horizontalAlign: "middle"
+            }}
+          />
         </label>
         <br />
         <label>
           {"Password: "}
-          <input type="password" placeholder="password" value={password} onChange={handlePasswordChange} />
+          <input 
+            type="password" 
+            placeholder=" password" 
+            value={password} 
+            onChange={handlePasswordChange} 
+            style={{
+              borderRadius: "5px",
+              display: "inline-block", 
+              verticalAlign: "middle",
+              horizontalAlign: "middle"
+            }}
+          />
         </label>
       </div>
 
