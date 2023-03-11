@@ -25,15 +25,29 @@ function SignInForm() {
 
     console.log(`Username: ${username} Password: ${password}`);
     console.log(window.location.origin)
-    fetch(`http://localhost:3001/login?username=${username}&password=${password}`)
-    // fetch(`http://localhost:3001/test`)
-    .then(response => response.json())
-    .then((json) => {
-      console.log();
+  //   fetch(`http://localhost:3001/login?username=${username}&password=${password}`)
+  //   // fetch(`http://localhost:3001/test`)
+  //   .then(response => response.json())
+  //   .then((json) => {
+  //     console.log();
+  //   });
+  // };
+
+  console.log(JSON.stringify({ username, password }))
+  fetch('http://localhost:3001/login', {
+    method: 'POST',
+    body: JSON.stringify({ username, password }),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+    // Handle the response from the backend
+    if (data.error) {
+    alert(data.error);
+    } else {
+    alert('Login successful');
+    }
     });
-  };
-
-
+    };
 
   return (
     <form onSubmit={handleSubmit}>

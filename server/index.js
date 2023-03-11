@@ -25,21 +25,26 @@ app.get('/test', (req, res) => {
 });
 
 
-app.get('/login', (req, res) => {
-   user = req.params;
-   const password = req.query.password;
-  const username = req.query.username;
-    /*
-    // Query Database
-    User = queryDB(id);
-    */
-    console.log("Recieved API request");
-  console.log(`username: ${username}\npassword: ${password}`);
-  console.log("\n")
 
-  res.status(200).send('OK');
-
-})
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+  console.log("Receieved Login Request")
+  console.log(req.body)
+  User.findOne({ username }, (err, user) => {
+  if (err || !user) {
+  return res.status(401).json({ error: 'User not found' });
+  }
+  
+  // Check the password
+  if (user.password === password) {
+  // Set up the session
+  req.session.user = user;
+  return res.json({ message: 'Login successful' });
+  } else {
+  return res.status(401).json({ error: 'Incorrect password' });
+  }
+  });
+  });
 
 app.get('/getUser/:id', (req, res) => {
   const id = req.params.id;
