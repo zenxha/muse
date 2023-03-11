@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session')
 const app = express();
+const bodyParser = require("body-parser");
 const cors = require('cors')
 
 
@@ -8,6 +9,7 @@ const mongoose = require('mongoose');
 const User = require('./mongoose/models/user');
 const Post = require('./mongoose/models/post')
 const usersRouter = require('./routes/userAPI')
+const postsRouter = require('./routes/postAPI')
 
 mongoose.connect('mongodb://localhost/muse');
 
@@ -19,8 +21,13 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.use("/api/users", usersRouter);
+app.use("/api/posts", postsRouter);
+
 
 app.get('/test', (req, res) => {
   res.send({ message: 'Hello from the backend!' });
@@ -33,7 +40,7 @@ app.post('/login', (req, res) => {
   const { username, password } = req.body;
   console.log("Receieved Login Request")
   console.log(req.body)
-  User.findOne({ username }, (err, user) => {
+  User.findOne({ username }, (err, npuser) => {
   if (err || !user) {
   return res.status(401).json({ error: 'User not found' });
   }
