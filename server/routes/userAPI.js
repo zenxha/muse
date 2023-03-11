@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     res.send("No need for you to get all the users breh");
 })
 
-router.get("/:id", async (req, res) => {
+router.get("/id/:id", async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
         if (!user) {
