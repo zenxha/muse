@@ -4,7 +4,7 @@ class Post {
     _upvotes: number;
     _content: string;
     _commentIDs: string[];
-    constructor(postID) {
+    constructor(postID:string, ) {
         this._postID = postID;
     }
 
