@@ -1,6 +1,7 @@
 import Home from './routes/Home';
 import About from './routes/About';
 import Nav from './components/Nav'
+import { Navbar } from './components/NewNav';
 import Login from './routes/Login';
 import Profile from './routes/Profile'
 import SignUp from './routes/Signup';
@@ -15,7 +16,7 @@ import {
 function App() {
   return (
     <>
-    <Nav />
+    <Navbar />
     <div className="App App-header">
       <Routes>
         <Route path="/" element={<Home />} />
