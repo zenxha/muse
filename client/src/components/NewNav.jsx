@@ -17,9 +17,11 @@ export function Navbar() {
                         <h2 className='Nav-icon'>{"🎹"}</h2>
                         <Link to='/' className='Nav-text' style={{marginRight: '25px'}}> {"MUSE"} </Link>
                         <div className="Nav-multibox-root">
-                            <button className='Nav-btn'>
-                                About
-                            </button>
+                            <Link to='/about' style={{textDecoration: 'none'}}>
+                                <button className='Nav-btn'>
+                                    About
+                                </button>
+                            </Link>
                             <button className='Nav-btn'>
                                 Pricing
                             </button>

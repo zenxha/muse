@@ -1,3 +1,12 @@
+:root{
+    --bg-container: rgb(173, 173, 173);
+    --bg-container-shadow: #ccc;
+    --bg-overall: white;
+    --th-dropdown: grey;
+    --th-dropdown-hover: rgb(75, 75, 75);
+    --profile-icon: #f21f1f;
+}
+
 .Nav-cover {
     min-width: 100ch;
     box-sizing: border-box;
@@ -7,7 +16,7 @@
 }
 
 .Nav-container {
-    background: rgb(173, 173, 173);
+    background: var(--bg-container);
     margin-bottom: -4px;
     position: relative;
     left:0;
@@ -21,13 +30,13 @@
     left: 0;
     right: 0;
     bottom: -5px; /* adjust the value to control the distance between the navbar and the grey layer */
-    background-color: #ccc;
+    background-color: var(--bg-container-shadow);
     z-index: -1;
   }
   
 
 .Nav-container-inner {
-    background: azure;
+    background: var(--bg-overall);
     margin-top: 4px;
 }
 
@@ -51,7 +60,7 @@
     bottom: -5px; /* adjust the value to control the distance between the navbar and the grey layer */
     width: 100%;
     height: 5px;
-    background-color: #ccc;
+    background-color: var(--bg-container-shadow);
   }
 
 .Nav-root {
@@ -135,10 +144,10 @@
     border-radius: 4px;
     -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    color: white;
+    color: var(--bg-overall);
     margin-top: 16px;
     margin-bottom: 16px;
-    color: grey;
+    color: var(--th-dropdown);
     display: block;
 }
 
@@ -154,36 +163,47 @@
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
+
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+
     position: relative;
     box-sizing: border-box;
+
     -webkit-tap-highlight-color: transparent;
     background-color: transparent;
+
     outline: 0;
     border: 0;
     margin: 0;
     border-radius: 0;
     padding: 0;
     cursor: pointer;
+
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
     vertical-align: middle;
+
     -webkit-text-decoration: none;
     text-decoration: none;
+
     color: inherit;
     text-align: center;
+
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
+
     font-size: 1.5rem;
     padding: 8px;
     border-radius: 50%;
@@ -200,17 +220,21 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+
     width: 40px;
     height: 40px;
     font-family: "Roboto","Helvetica","Arial",sans-serif;
@@ -218,12 +242,17 @@
     line-height: 1;
     border-radius: 50%;
     overflow: hidden;
+
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: #fff;
-    background-color: #bdbdbd;
+
+    color: var(--bg-overall);
+    background-color: var(--profile-icon);
+    /* just to aligh text center */
+    text-align: center;
+    padding-top: 5px;
 }
 
 .Nav-span{
@@ -232,10 +261,6 @@
     text-align: center;
     font-size: 1.5rem;
     color: rgba(0, 0, 0, 0.54);
-}
-
-.Nav-btn:valid ~.Nav-span{
-    cursor:none;
 }
 
 .Nav-dropdown-container{
@@ -261,7 +286,7 @@
 }
 
 .Nav-dropdown-list{
-    background: grey;
+    background: var(--th-dropdown);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -278,52 +303,67 @@
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
+
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+
     position: relative;
     box-sizing: border-box;
+
     -webkit-tap-highlight-color: transparent;
     background-color: transparent;
+
     outline: 0;
     border: 0;
     margin: 0;
     border-radius: 0;
     padding: 0;
+
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
     vertical-align: middle;
+
     -webkit-text-decoration: none;
     text-decoration: none;
+
     color: inherit;
     font-family: "Roboto","Helvetica","Arial",sans-serif;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.0;
     letter-spacing: 0.00938em;
+
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
+
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+
     position: relative;
+
     -webkit-text-decoration: none;
     text-decoration: none;
+
     min-height: 48px;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -334,5 +374,5 @@
 }
 
 .Nav-list-item:hover{
-    background-color: rgb(75, 75, 75);
+    background-color: var(--th-dropdown-hover);
 }
