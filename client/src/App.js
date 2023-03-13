@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Login from './routes/Login';
 import Profile from './routes/Profile'
 import SignUp from './routes/Signup';
+import { FUN } from './routes/FUN';
 
 import {
   useParams,
@@ -21,7 +22,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile/:username" element={<ProfilePageWithUserId/> } />
-        <Route path="/create_account" element={<SignUp />} />
+        <Route path="/register" element={<SignUp />} />
+        <Route path="/forgot_password" element={<FUN />} />
       </Routes>
     </div>
 

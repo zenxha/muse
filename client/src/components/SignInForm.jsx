@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import "./SignInForm.module.css"
-// import Button from './Button';
-// import Button from '@mui/material/Button';
-import Button from "./Button";
-//import { createTheme } from '@mui/material/styles';
 import {Link} from 'react-router-dom';
+import './SignInFormStyle.css';
 
 
 //const theme = createTheme();
@@ -59,46 +55,47 @@ function SignInForm() {
   //   };
 
   return (
-    <>
-      <div>
-        <label>
-          {"Username: "}
-          <input 
-            type="text" 
-            placeholder=" id" 
-            value={username} 
-            onChange={handleUsernameChange} 
-            style={{
-              borderRadius: "5px",
-              display: "inline-block", 
-              verticalAlign: "middle",
-              horizontalAlign: "middle"
-            }}
-          />
-        </label>
-        <br />
-        <label>
-          {"Password: "}
-          <input 
-            type="password" 
-            placeholder=" password" 
-            value={password} 
-            onChange={handlePasswordChange} 
-            style={{
-              borderRadius: "5px",
-              display: "inline-block", 
-              verticalAlign: "middle",
-              horizontalAlign: "middle"
-            }}
-          />
-        </label>
+    <div style={{
+      display: 'flex',
+      //background: '#fff',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '100vh',
+      overflow: 'hidden'
+    }}>
+      <div className="container">
+          <div className="image">
+              <div className="form-box">
+                  <div className="form">
+                      <h2>Register</h2>
+                      {/* <div className="input-box">
+                          <input type="text" required className="username" />
+                          <label for="Username">
+                              Username
+                          </label>
+                      </div> */}
+                      <div className="input-box">
+                          <input type="text" required className="email" />
+                          <label for="Username">
+                              Email
+                          </label>
+                      </div>
+                      <div className="input-box">
+                          <input type="password" required className="password" />
+                          <label for="Username">
+                              Password
+                          </label>
+                      </div>
+                      <div className="group">
+                          <Link to="/forgot_password" className='link'>Forgot Password</Link>
+                          <Link to="/register" className='link'>Sign in</Link>
+                      </div>
+                      <button className='sign-in-btn'>Sign up</button>
+                  </div>
+              </div>
+        </div>
       </div>
-
-      <div className='btns'>
-        <Button type="submit" text = "Log In" onClick={handleClick} />
-        <Link to="/create_account"  style={{ textDecoration: "none", color: 'black', }}><Button type="submit" text = "Sign In" /></Link>
-      </div>
-    </>
+    </div>
   );
 }
 
