@@ -75,13 +75,13 @@ function SignInForm() {
                           </label>
                       </div> */}
                       <div className="input-box">
-                          <input type="text" required className="email" />
+                          <input type="text" value={username}  onChange={handleUsernameChange} required className="email" />
                           <label for="Username">
                               Email
                           </label>
                       </div>
                       <div className="input-box">
-                          <input type="password" required className="password" />
+                          <input type="password" value={password} onChange={handlePasswordChange} required className="password" />
                           <label for="Username">
                               Password
                           </label>
@@ -90,7 +90,7 @@ function SignInForm() {
                           <Link to="/forgot_password" className='link'>Forgot Password</Link>
                           <Link to="/register" className='link'>Sign in</Link>
                       </div>
-                      <button className='sign-in-btn'>Sign up</button>
+                      <button className='sign-in-btn' onClick={handleClick}>Sign up</button>
                   </div>
               </div>
         </div>
